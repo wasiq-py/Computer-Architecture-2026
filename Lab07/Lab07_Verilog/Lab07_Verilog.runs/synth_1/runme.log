@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log top_rf_alu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_rf_alu.tcl
+    with args -log top_alu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_alu.tcl
 
 
 
@@ -9,94 +9,84 @@
   **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
-source top_rf_alu.tcl -notrace
-Command: synth_design -top top_rf_alu -part xc7a35tcpg236-1
+source top_alu.tcl -notrace
+Command: synth_design -top top_alu -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 114308
+INFO: [Synth 8-7075] Helper process launched with PID 8560
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1029.004 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_rf_alu' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/top_rf_alu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'top_alu' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/top_alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RF_ALU_FSM' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/RF_ALU_FSM.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/RF_ALU_FSM.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'RF_ALU_FSM' (1#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/RF_ALU_FSM.v:1]
 INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/regfile.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'regfile' (1#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/regfile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (2#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/regfile.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/ALU.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (2#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/ALU.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RF_ALU_FSM' [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/RF_ALU_FSM.v:23]
-	Parameter S_WR_X1 bound to: 5'b00000 
-	Parameter S_WR_X2 bound to: 5'b00001 
-	Parameter S_WR_X3 bound to: 5'b00010 
-	Parameter S_SET_ADD bound to: 5'b00011 
-	Parameter S_WR_ADD bound to: 5'b00100 
-	Parameter S_SET_SUB bound to: 5'b00101 
-	Parameter S_WR_SUB bound to: 5'b00110 
-	Parameter S_SET_AND bound to: 5'b00111 
-	Parameter S_WR_AND bound to: 5'b01000 
-	Parameter S_SET_OR bound to: 5'b01001 
-	Parameter S_WR_OR bound to: 5'b01010 
-	Parameter S_SET_XOR bound to: 5'b01011 
-	Parameter S_WR_XOR bound to: 5'b01100 
-	Parameter S_SET_SLL bound to: 5'b01101 
-	Parameter S_WR_SLL bound to: 5'b01110 
-	Parameter S_SET_SRL bound to: 5'b01111 
-	Parameter S_WR_SRL bound to: 5'b10000 
-	Parameter S_SET_BEQ bound to: 5'b10001 
-	Parameter S_WR_FLAG bound to: 5'b10010 
-	Parameter S_WR_RAW bound to: 5'b10011 
-	Parameter S_RD_RAW bound to: 5'b10100 
-	Parameter S_DONE bound to: 5'b10101 
-INFO: [Synth 8-6155] done synthesizing module 'RF_ALU_FSM' (3#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/RF_ALU_FSM.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'top_rf_alu' (4#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/top_rf_alu.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (3#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_alu' (4#1) [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/sources_1/new/top_alu.v:1]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1029.004 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1029.004 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1029.004 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1029.004 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/constrs_1/new/top_alu.xdc]
+Finished Parsing XDC File [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/constrs_1/new/top_alu.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.srcs/constrs_1/new/top_alu.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_alu_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_alu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.543 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1038.543 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1038.543 ; gain = 9.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.926 ; gain = 0.000
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1038.543 ; gain = 9.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1038.543 ; gain = 9.539
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'RF_ALU_FSM'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                 S_WR_X1 |                            00000 |                            00000
-                 S_WR_X2 |                            00001 |                            00001
-                 S_WR_X3 |                            00010 |                            00010
-               S_SET_ADD |                            00011 |                            00011
-                S_WR_ADD |                            00100 |                            00100
-               S_SET_SUB |                            00101 |                            00101
-                S_WR_SUB |                            00110 |                            00110
-               S_SET_AND |                            00111 |                            00111
-                S_WR_AND |                            01000 |                            01000
-                S_SET_OR |                            01001 |                            01001
-                 S_WR_OR |                            01010 |                            01010
-               S_SET_XOR |                            01011 |                            01011
-                S_WR_XOR |                            01100 |                            01100
-               S_SET_SLL |                            01101 |                            01101
-                S_WR_SLL |                            01110 |                            01110
-               S_SET_SRL |                            01111 |                            01111
-                S_WR_SRL |                            10000 |                            10000
-               S_SET_BEQ |                            10001 |                            10001
-               S_WR_FLAG |                            10010 |                            10010
-                S_WR_RAW |                            10011 |                            10011
-                S_RD_RAW |                            10100 |                            10100
-                  iSTATE |                            10101 |                            10101
-*
+                  iSTATE |                             0001 |                            00000
+                 iSTATE0 |                             0010 |                            00001
+                 iSTATE1 |                             0100 |                            00010
+                 iSTATE2 |                             1000 |                            00011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'RF_ALU_FSM'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'RF_ALU_FSM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1038.543 ; gain = 9.539
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -107,18 +97,17 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 33    
-	                5 Bit    Registers := 3     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	  33 Input   32 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 3     
 	   8 Input   32 Bit        Muxes := 1     
-	  22 Input   32 Bit        Muxes := 1     
-	  22 Input    5 Bit        Muxes := 4     
-	  22 Input    4 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 32    
-	  22 Input    1 Bit        Muxes := 3     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 33    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -131,25 +120,29 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1038.543 ; gain = 9.539
 ---------------------------------------------------------------------------------
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1038.543 ; gain = 9.539
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1077.270 ; gain = 48.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -167,37 +160,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -216,45 +209,36 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |     8|
 |3     |LUT1   |     1|
-|4     |LUT2   |     2|
-|5     |LUT3   |    58|
-|6     |LUT4   |    22|
-|7     |LUT5   |   148|
-|8     |LUT6   |   205|
-|9     |FDRE   |   209|
-|10    |IBUF   |     2|
-|11    |OBUF   |     8|
+|4     |LUT2   |    33|
+|5     |LUT3   |    56|
+|6     |LUT4   |    29|
+|7     |LUT5   |    67|
+|8     |LUT6   |   174|
+|9     |FDRE   |    71|
+|10    |FDSE   |     1|
+|11    |IBUF   |    12|
+|12    |OBUF   |    16|
 +------+-------+------+
-
-Report Instance Areas: 
-+------+---------+-----------+------+
-|      |Instance |Module     |Cells |
-+------+---------+-----------+------+
-|1     |top      |           |   664|
-|2     |  RF     |regfile    |   470|
-|3     |  alu    |ALU        |     8|
-|4     |  fsm    |RF_ALU_FSM |   175|
-+------+---------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1078.336 ; gain = 39.793
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1078.336 ; gain = 49.332
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1078.336 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1024.926 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1078.336 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1024.926 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.runs/synth_1/top_rf_alu.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file top_rf_alu_utilization_synth.rpt -pb top_rf_alu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 24 11:31:01 2026...
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 1078.336 ; gain = 49.332
+INFO: [Common 17-1381] The checkpoint 'C:/Users/fs09911/Desktop/CA-Labs/Lab07/Lab07_Verilog/Lab07_Verilog.runs/synth_1/top_alu.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_alu_utilization_synth.rpt -pb top_alu_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  3 11:46:22 2026...
