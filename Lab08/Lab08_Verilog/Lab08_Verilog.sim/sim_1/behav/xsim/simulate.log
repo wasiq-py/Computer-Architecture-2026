@@ -1,0 +1,4 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+LED write: address[9:8] = 10
+SW read:   address[9:8] = 11
