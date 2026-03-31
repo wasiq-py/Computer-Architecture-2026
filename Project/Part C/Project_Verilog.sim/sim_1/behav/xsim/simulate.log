@@ -1,0 +1,14 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Time=50000 | LEDs=0 (hex=0000)
+Time=50000 | LEDs=0 (hex=0000)
+Time=1250000 | LEDs=1 (hex=0001)
+Time=6450000 | LEDs=2 (hex=0002)
+Time=9050000 | LEDs=3 (hex=0003)
+Time=11650000 | LEDs=5 (hex=0005)
+Time=14250000 | LEDs=8 (hex=0008)
+Time=16850000 | LEDs=13 (hex=000d)
+Time=19450000 | LEDs=21 (hex=0015)
+Time=22050000 | LEDs=34 (hex=0022)
+Time=24650000 | LEDs=55 (hex=0037)
+Time=26750000 | LEDs=0 (hex=0000)
