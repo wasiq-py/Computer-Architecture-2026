@@ -24,13 +24,10 @@ module tb_task3;
         #200;
         rst = 0;
 
-        // Fibonacci runs automatically, no switch input needed
-        // Expected LEDs: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, then 0 (halt)
-        #30000;
+       #30000;
         $finish;
     end
 
-    // Monitor LED changes only
     always @(LEDs) begin
         $display("Time=%0t | LEDs=%0d (hex=%h)", $time, LEDs, LEDs);
     end

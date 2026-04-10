@@ -23,14 +23,7 @@ module tb_task2;
 
         #200;
         rst = 0;
-
-        // Program runs automatically - no switch input needed
-        // Test 1: SLT(5,10) → LEDs = 0x0001
-        // Test 1b: SLT(10,5) → LEDs = 0x0000
-        // Test 2: BGE(10,5) skips → LEDs = 0x00AA
-        // Test 3: LUI 0xABCDE → LEDs = 0xE000
-        // Then halts in infinite loop
-
+        
         #20000;
         $finish;
     end

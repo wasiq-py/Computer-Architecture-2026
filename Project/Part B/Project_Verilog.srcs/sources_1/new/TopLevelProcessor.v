@@ -25,7 +25,7 @@ wire DataMemWrite, DataMemRead, LEDWrite, SwitchReadEnable;
 wire branchTaken = Branch & (
     (funct3 == 3'b000 & Zero) |          // BEQ
     (funct3 == 3'b001 & ~Zero) |         // BNE
-    (funct3 == 3'b101 & ~ALUResult[31])  // BGE (NEW)
+    (funct3 == 3'b101 & ~ALUResult[31])  // BGE (added rn)
 );
 pcAdder pa(.PC(PC), .PCplus4(PCplus4));
 branchAdder ba(.PC(PC), .imm(imm), .branchTarget(branchTarget));
