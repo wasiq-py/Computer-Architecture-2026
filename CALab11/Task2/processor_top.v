@@ -76,7 +76,7 @@ assign mem_rd_data = sw_rd ? {{16{1'b0}}, switches} : dmem_rd_data;
 
 always @(posedge clk) begin
     if (rst) LEDs <= 16'b0;
-    else if (led_wr) LEDs <= alu_out[15:0];
+    else if (led_wr) LEDs <= rd_data2[15:0];
 end
 
 // fetch: update program counter

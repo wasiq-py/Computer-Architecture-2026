@@ -27,11 +27,11 @@ module instruction_mem #(
         mem_bytes[2]  = 8'h70;
         mem_bytes[3]  = 8'h00;
 
-        // addi x2, x0, 511   (stack pointer)
+        // addi x2, x0, 255   (stack pointer - mapped to data memory)
         mem_bytes[4]  = 8'h13;
         mem_bytes[5]  = 8'h01;
         mem_bytes[6]  = 8'hF0;
-        mem_bytes[7]  = 8'h1F;
+        mem_bytes[7]  = 8'h0F;
 
         // addi x5, x0, 512   (switch address 0x200 -> addr[9:8]=10 -> sw_rd)  [FIXED: was 768]
         mem_bytes[8]  = 8'h93;
