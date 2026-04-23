@@ -2,6 +2,13 @@
 // Lab 11 - Task 2: Top Level Processor
 // Connects all datapath and control modules
 // Single-cycle RISC-V (RV32I)
+//
+// FIXES:
+//   1. Branch target: was pc_current + (imm_val << 1)
+//      imm_gen B-type already outputs the full byte offset (bit[0]=0 built in)
+//      Fix: pc_branch = pc_current + imm_val  (no extra shift)
+//   2. LUI: main_ctrl sets alu_src=0 so imm never reaches ALU.
+//      Fix: reg_wr_data path for LUI bypasses ALU and writes imm_val directly.
 // ============================================
 module processor_top(
     input clk,
@@ -35,6 +42,10 @@ wire [31:0] dmem_rd_data, mem_rd_data;
 wire        dmem_wr, dmem_rd, led_wr, sw_rd;
 wire        branch_taken;
 
+// --- LUI detection ---
+wire is_lui;
+assign is_lui = (opcode == 7'b0110111);
+
 assign opcode   = instr[6:0];
 assign rd_addr  = instr[11:7];
 assign funct3   = instr[14:12];
@@ -47,13 +58,18 @@ assign branch_taken = branch & (
     (funct3 == 3'b001 & ~zero_flag) |   // BNE
     (funct3 == 3'b101 & ~alu_out[31])   // BGE
 );
-assign pc_branch = pc_current + (imm_val << 1);
+
+// FIX 1: pc_branch no longer shifts imm_val again.
+// imm_gen B-type already encodes full byte offset (has trailing 0 bit).
+assign pc_branch = pc_current + imm_val;
 assign pc_jump   = pc_current + imm_val;
 assign next_pc   = jmp_reg ? (rd_data1 + imm_val) :
                    jmp     ? pc_jump               :
                    branch_taken ? pc_branch        : pc_seq;
 
-assign reg_wr_data = (jmp | jmp_reg) ? pc_seq :
+// FIX 2: LUI writes imm_val directly, bypassing the ALU entirely.
+assign reg_wr_data = (jmp | jmp_reg) ? pc_seq    :
+                      is_lui         ? imm_val    :
                       mem_to_reg     ? mem_rd_data : alu_out;
 
 assign mem_rd_data = sw_rd ? {{16{1'b0}}, switches} : dmem_rd_data;
@@ -74,7 +90,7 @@ pc_adder PC_PLUS4 (
     .pc_in(pc_current), .pc_seq(pc_seq)
 );
 
-// fetch: instruction memory - same program as Lab10
+// fetch: instruction memory
 instruction_mem IMEM (
     .pc_addr(pc_current), .instr_out(instr)
 );
