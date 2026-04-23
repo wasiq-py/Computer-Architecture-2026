@@ -12,6 +12,9 @@
 module instruction_mem #(
     parameter ADDR_BITS = 8
 )(
+
+
+    
     input [31:0] pc_addr,
     output reg [31:0] instr_out
 );
